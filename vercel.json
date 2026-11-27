@@ -1,0 +1,12 @@
+{
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/pathora-api/cron/research",
+      "schedule": "0 19 * * *"
+    }
+  ],
+  "regions": [
+    "sin1"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "pathora",
+  "private": true,
+  "packageManager": "pnpm@10.34.9",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" next dev --port ${PORT:-3000}",
+    "build": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload migrate && NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload build",
+    "migrate": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload migrate",
+    "build:nomigrate": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload build",
+    "start": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" next start",
+    "format": "oxfmt",
+    "generate:importmap": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload generate:importmap",
+    "generate:types": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload generate:types",
+    "research": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload run scripts/research.ts",
+    "images": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload run scripts/listing-images.ts",
+    "stripe:setup": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload run scripts/stripe-setup.ts",
+    "payload": "NODE_OPTIONS=\"${NODE_OPTIONS:-} --no-deprecation\" payload"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.14.0",
+    "@google/genai": "3.6.1",
+    "@payloadcms/db-postgres": "4.0.0-beta.11",
+    "@payloadcms/next": "4.0.0-beta.11",
+    "@payloadcms/plugin-cloud-storage": "4.0.0-beta.11",
+    "@payloadcms/richtext-lexical": "4.0.0-beta.11",
+    "@payloadcms/storage-vercel-blob": "4.0.0-beta.11",
+    "@payloadcms/transformer-sharp": "4.0.0-beta.11",
+    "@payloadcms/translations": "4.0.0-beta.11",
+    "@payloadcms/ui": "4.0.0-beta.11",
+    "arctic": "3.7.0",
+    "graphql": "^16.8.1",
+    "html-react-parser": "^5.2.10",
+    "lucide-react": "^0.468.0",
+    "monaco-editor": "0.55.1",
+    "next": "16.4.6",
+    "payload": "4.0.0-beta.11",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router": "^7.18.7",
+    "sharp": "^0.35.4",
+    "stripe": "23.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "24.12.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "oxfmt": "^0.73.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": "^24.22.3 || >=26.13.1",
+    "pnpm": "^9 || ^10 || ^11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}

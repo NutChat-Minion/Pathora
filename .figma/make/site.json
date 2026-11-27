@@ -1,0 +1,10 @@
+{
+  "description": "Helps users turn ideas into actionable, practical plans by assessing feasibility, identifying gaps, and highlighting next steps.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
